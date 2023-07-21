@@ -1,0 +1,18 @@
+{
+  "name": "mineflayer-dashboard",
+  "version": "1.0.0",
+  "description": "This branch is for the server/bot code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "mineflayer": "^4.10.0"
+  }
+}
