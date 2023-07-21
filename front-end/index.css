@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+body {
+    background-color: #1a1a1a;
+}
+  
+  .extra {
+  margin-left: 1%;
+  }
+
+  .extrafor {
+    margin-top: -2.5%;
+    }

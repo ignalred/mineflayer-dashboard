@@ -1,0 +1,15 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  transition: all 0.15s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}

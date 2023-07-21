@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineflayer Dashboard - Control Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script>
+        const server = "44.201.231.70:3495";
+        function requestServer(type) {
+            if (type == "msg") {
+                window.open(`http://${server}/send_msg?msg=${encodeURIComponent(document.getElementById('msgBox').value)}`, "_self");
+            } else if (type == "cloop") {
+                window.open(`http://${server}/cloop?command=${encodeURIComponent(document.getElementById('msgBox').value)}`, "_self")
+            } else if (type == "clearloops") {
+              window.open(`http://${server}/clearloops`, "_self")      
+            } else if (type == "deop") {
+              window.open(`http://${server}/send_msg?msg=/deop @a`, "_self")
+            } else if (type == "op") {
+              window.open(`http://${server}/send_msg?msg=/op @a`, "_self")
+            } else if (type == "kill") {
+              window.open(`http://${server}/send_msg?msg=/kill @a`, "_self")
+            } else if (type == "clearchat") {
+              window.open(`http://${server}/send_msg?msg=/clearchat`, "_self")
+            } else if (type == "introduce") {
+              window.open(`http://${server}/send_msg?msg=Hey there! I'm a Minecraft bot ran by an online dashboard. The user who owns this bot just sent out a message to introduce myself. I can do many things, helpful to have a nice time on Minecraft. Please join my Discord! https://discord.gg/DsWDdVdYYC`, "_self")
+        }};
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand extra" href="#">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="modules.html">Modules</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container extrafor">
+            <div class="logo">
+            <img src="https://avatars.githubusercontent.com/u/11053411">
+            </div>
+        <div class="row">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Type your message here! This will broadcast to the server." id="msgBox"><br>
+            </div>    
+          <div class="col-md-8 offset-md-2 text-center">    
+            <button onclick="requestServer('msg')" type="button" class="btn btn-dark mt-2">SEND MESSAGE</button>
+            <button onclick="requestServer('introduce')" type="button" class="btn btn-dark mt-2">INTRODUCTION</button>
+            <button onclick="requestServer('deop')" type="button" class="btn btn-dark mt-2">DEOP ALL</button>
+            <button onclick="requestServer('op')" type="button" class="btn btn-dark mt-2">OP ALL</button>
+            <button onclick="requestServer('kill')" type="button" class="btn btn-dark mt-2">KILL ALL</button>
+            <button onclick="requestServer('clearchat')" type="button" class="btn btn-dark mt-2">CLEARCHAT</button>
+            <button onclick="requestServer('cloop')" type="button" class="btn btn-dark mt-2">CLOOP</button>
+            <button onclick="requestServer('clearloops')" type="button" class="btn btn-dark mt-2">CLEAR LOOPS</button>
+            <!--<h6 class="text-danger mt-2">Username: message</h6>-->
+          </div>
+        </div>
+      </div>
+</body>
+</html>
