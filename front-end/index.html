@@ -10,7 +10,7 @@
 </head>
 <body>
     <script>
-        const server = "44.201.231.70:3495";
+        const server = "";
         function requestServer(type) {
             if (type == "msg") {
                 window.open(`http://${server}/send_msg?msg=${encodeURIComponent(document.getElementById('msgBox').value)}`, "_self");
